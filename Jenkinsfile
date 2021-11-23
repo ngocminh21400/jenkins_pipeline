@@ -12,7 +12,7 @@ pipeline{
             steps{
                 echo 'Building..'
 
-                withDockerRegistry(credentialsId: 'docker-id', url: 'https://hub.docker.com/r/mingming21400/angular-project') {
+                withDockerRegistry(credentialsId: 'docker-id') {
                     sh 'docker build -t angular-project .'
                     sh 'docker tag angular-project mingming21400/angular-project'
                     sh 'docker push mingming21400/angular-project'
