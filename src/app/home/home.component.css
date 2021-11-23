@@ -1,0 +1,144 @@
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  .row {
+    
+    height:fit-content;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    /* width: 80%; */
+    height: auto;
+    margin-top: 10px;
+    /* margin-left: auto;
+    margin-right: auto; */
+    background-color: rgb(255, 255, 255);
+  }
+
+
+  [class*="col-"] {
+    float: left;
+    padding: 15px;
+  }
+/* for mobile phone */
+[class*="col-"]{
+    width: 100%;
+    
+}
+/* @media only screen and (max-width:600px){
+    .menu ul li a{
+        padding: 8px 8px;
+    }
+
+    .categories{
+        margin-top: 10px !important;  
+     }
+} */
+
+/* For tablets: */
+
+
+ /* For desktop: */
+
+
+/* category - left*/
+.items ul {  
+    list-style-type: none;
+   
+    padding: 0;
+}
+.items{
+    padding: 0 5px 0 5px ;
+}
+
+.items ul li a{
+    display: block;
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+.categories{
+   margin: 80px 0px 0 0px;
+   
+    text-align: center;
+   
+}
+.items ul li a{
+    border-bottom: 1px dotted rgb(129, 188, 255);
+}
+.items ul li a:hover{
+    background-color: rgb(209, 230, 255);
+   
+    
+}
+.nameCategories{
+    
+    background-color: rgb(0, 119, 255);
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 5px;
+    height: 30px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin: 0 5px 0 5px ;
+    
+}
+
+
+/* content */
+
+
+.titleContent{
+    font-size: 25px;
+    font-weight: bold;
+    color: rgb(0, 89, 255);
+    text-align: center;
+    width: 100%;
+
+}
+.product{
+    text-align: center;
+    border: 1px  solid rgb(224, 224, 224);
+   
+    float: left;
+    margin: 5px 0px 0 0;
+    padding: 20px 0 20px 0;
+    transition: width 1s, height 1s;
+}
+.product:hover{
+    background-color: rgb(242, 245, 250);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      
+}
+.nameProduct{
+    overflow-y: hidden;
+    height: 20px;
+    width: 100%;
+}
+#imgProduct{
+    width: 65%;
+    height: 65%;
+}
+#imgProduct:hover{
+    transform: scale(1.1,1.2);
+}
+.btn-add-cart{
+    background-color: rgb(36, 113, 255);
+    color: white;
+    height: 35px;
+    font-size: 15px;
+    border-radius: 5px; 
+    border: none;
+    width: 50%;
+    padding: 3px;
+}
+.priceProduct{
+    font-weight: bold;
+    color: tomato;
+}
+.btn-add-cart:hover{
+    cursor: pointer;
+    background-color: tomato;
+}

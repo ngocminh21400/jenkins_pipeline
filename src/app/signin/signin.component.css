@@ -1,0 +1,97 @@
+
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 13px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+
+
+button {
+    background-color: #0076e4;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+    border-radius: 15px;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+
+
+.container {
+  padding: 16px;
+  
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+
+.formLogin{
+ 
+    width:fit-content;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    /* transform: translate(-50%, -50%); */
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px; */
+    padding: 15px 40px 40px;
+    /* background-color: rgb(255, 255, 255); */
+    height: 500px;
+    
+}
+@media only screen and (min-width:700px){
+  
+  .formLogin{
+   
+     
+      box-shadow: none;
+      border-radius: none;
+      background-color: none;     
+      
+  }
+  }
+  
+
+@media only screen and (min-width:600px){
+
+  .formLogin{
+   
+      width:550px;
+
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      border-radius: 5px;
+      
+      background-color: rgb(255, 255, 254);
+    
+  }
+  }
+
+
+#singin{
+    font-size: 25px;
+    font-weight: bold;
+    color: #0076e4;
+    text-align: center;
+}

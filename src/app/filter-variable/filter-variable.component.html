@@ -1,0 +1,14 @@
+<div class = "col-12 " style="overflow: hidden;">
+  <div class="filter-within-iframe">
+    Data_out <
+        <select  (change)="onChange($event)">
+          <option *ngFor="let items of datalist">{{items}}</option>
+      </select>
+    <br/>
+  </div>
+    <!-- <div *ngFor = "let item of datalist, let i = index" >
+      {{i}}<p>{{item}}</p>
+    </div> -->
+
+    <iframe  [src]="urlSafe" class="col-12" scrolling="no" [height]="innerHeight" width="100%" frameborder="0"></iframe>
+</div>

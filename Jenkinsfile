@@ -1,10 +1,23 @@
 pipeline{
     agent any
     stages{
-        stage('clone'){
+        stage('Update git'){
             steps{
                 git 'https://github.com/ngocminh21400/jenkins_pipeline.git'
             }
+        }
+
+        stage('Docker build'){
+            withDockerRegistry(credentialsId: 'docker-id', url: 'https://hub.docker.com/r/mingming21400/angular-project') {
+                sh 'docker build -t angular-project .'
+                sh 'docker tag angular-project mingming21400/angular-project'
+                sh 'docker push mingming21400/angular-project'
+            }
+        }
+    }
+    post {
+        always {
+            echo 'build done'
         }
     }
 }
