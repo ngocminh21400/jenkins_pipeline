@@ -1,12 +1,12 @@
 pipeline{
     agent any
     stages{
-        // stage('Update git'){
-        //     steps{
-        //         git 'https://github.com/ngocminh21400/jenkins_pipeline.git'
-        //         echo 'Clone Done..'
-        //     }
-        // }
+        stage('Update git'){
+            steps{
+                git 'https://github.com/ngocminh21400/jenkins_pipeline.git'
+                echo 'Clone Done..'
+            }
+        }
 
         stage('Docker build'){
             steps{

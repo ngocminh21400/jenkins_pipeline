@@ -1,5 +1,5 @@
-FROM node:12.22-slim as build-step
-WORKDIR /usr/src/app
+# FROM node:12.22-slim as build-step
+# WORKDIR /usr/src/app
 
 # COPY . .
 # RUN chmod u+x ./my-script.sh
@@ -8,10 +8,10 @@ WORKDIR /usr/src/app
 # EXPOSE 4200
 # EXPOSE 8080
 
-#FROM node:10-alpine as build-step
-#RUN mkdir -p /app
+FROM node:10-alpine as build-step
+RUN mkdir -p /app
 
-#WORKDIR /usr/src/app
+WORKDIR /usr/src/app
 COPY package.json /app
 #COPY . .
 RUN npm install
