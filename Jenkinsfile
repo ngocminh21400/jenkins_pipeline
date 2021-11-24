@@ -1,33 +1,32 @@
 pipeline{
-    agent {
-        node{
-            label 'centos-vm'
-        }
-    }
+    agent none
     stages{
         stage('Update git'){
+            agent {label 'centos-vm'}
             steps{
+                sh 'cat /etc/os-release'
                 git 'https://github.com/ngocminh21400/jenkins_pipeline.git'
                 echo 'Clone Done..'
             }
         }
 
-        stage('Docker build'){
-            steps{
-                echo 'Building..'
+        // stage('Docker build'){
+        //     steps{
+        //         echo 'Building..'
 
-                withDockerRegistry(credentialsId: 'docker-id') {
-                    sh 'docker build -t angular-project .'
-                    // sh 'docker tag angular-project mingming21400/angular-project'
-                    // sh 'docker run -d -p 99:80 mingming21400/angular-project'
-                    sh 'curl http://localhost:99'
-                    echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
-                }
-            }
-        }
+        //         withDockerRegistry(credentialsId: 'docker-id') {
+        //             sh 'docker build -t angular-project .'
+        //             // sh 'docker tag angular-project mingming21400/angular-project'
+        //             // sh 'docker run -d -p 99:80 mingming21400/angular-project'
+        //             sh 'curl http://localhost:99'
+                   
+        //         }
+        //     }
+        // }
         stage('selenium test'){
+            agent {label 'centos-vm'}
             steps{
-                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+                sh 'python3 --version'
                 sh 'python3 test.py'
             }
         }
