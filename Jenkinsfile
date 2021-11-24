@@ -15,7 +15,8 @@ pipeline{
                 withDockerRegistry(credentialsId: 'docker-id') {
                     sh 'docker build -t angular-project .'
                     sh 'docker tag angular-project mingming21400/angular-project'
-                    sh 'docker run -d mingming21400/angular-project'
+                    sh 'docker run -d -p 80:80 mingming21400/angular-project'
+                    sh 'curl http://localhost'
                 }
             }
         }
