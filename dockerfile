@@ -19,7 +19,10 @@
 #EXPOSE 8080
 
 FROM nginx:1.17.1-alpine
-COPY ./dist/projectAngular /usr/share/nginx/html
+
+#COPY ./dist/projectAngular /usr/share/nginx/html
+COPY package.json /usr/share/nginx/html
+COPY dist/projectAngular /usr/share/nginx/html
 
 #RUN --from=build-step npm start
 
