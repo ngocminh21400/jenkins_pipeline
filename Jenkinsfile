@@ -15,8 +15,13 @@ pipeline{
                 withDockerRegistry(credentialsId: 'docker-id') {
                     sh 'docker build -t angular-project .'
                     sh 'docker tag angular-project mingming21400/angular-project'
-                    sh 'docker push mingming21400/angular-project'
+                    sh 'docker run -d mingming21400/angular-project'
                 }
+            }
+        }
+        stage('selenium test'){
+            steps{
+                sh 'python3 test.py'
             }
         }
     }
