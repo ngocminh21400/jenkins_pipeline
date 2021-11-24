@@ -1,8 +1,8 @@
 pipeline{
-    agent none
+    agent {label 'centos-vm'}
     stages{
         stage('Update git'){
-            agent {label 'centos-vm'}
+            
             steps{
                 sh 'cat /etc/os-release'
                 git 'https://github.com/ngocminh21400/jenkins_pipeline.git'
@@ -24,7 +24,7 @@ pipeline{
         //     }
         // }
         stage('selenium test'){
-            agent {label 'centos-vm'}
+            
             steps{
                 sh 'python3 --version'
                 sh 'python3 test.py'
