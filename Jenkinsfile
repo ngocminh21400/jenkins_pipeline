@@ -10,22 +10,22 @@ pipeline{
             }
         }
 
-        stage('Docker build'){
-            steps{
-                echo 'Building..'
+        // stage('Docker build'){
+        //     steps{
+        //         echo 'Building..'
 
-                withDockerRegistry(credentialsId: 'docker-id') {
+        //         withDockerRegistry(credentialsId: 'docker-id') {
                     
-                    sh 'docker build -t angular-project .'
-                    sh 'docker tag angular-project mingming21400/angular-project'
-                    sh 'docker push mingming21400/angular-project'
-                    sh 'docker run -d -p 99:80 --name angular mingming21400/angular-project'
-                    sh 'curl http://localhost:99'
-                    sh 'docker stop angular'
-                    sh 'docker rm angular'
-                }
-            }
-        }
+        //             sh 'docker build -t angular-project .'
+        //             sh 'docker tag angular-project mingming21400/angular-project'
+        //             sh 'docker push mingming21400/angular-project'
+        //             sh 'docker run -d -p 99:80 --name angular mingming21400/angular-project'
+        //             sh 'curl http://localhost:99'
+        //             sh 'docker stop angular'
+        //             sh 'docker rm angular'
+        //         }
+        //     }
+        // }
         stage('selenium test'){
             
             steps{
