@@ -21,7 +21,8 @@ pipeline{
                     sh 'docker push mingming21400/angular-project'
                     sh 'docker run -d -p 99:80 --name angular mingming21400/angular-project'
                     sh 'curl http://localhost:99'
-                   
+                    sh 'docker stop angular'
+                    sh 'docker rm angular'
                 }
             }
         }
@@ -36,8 +37,7 @@ pipeline{
     }
     post {
         always {
-            sh 'docker stop angular'
-            sh 'docker rm angular'
+
 
             echo 'One way or another, I have finished'
             deleteDir() /* clean up our workspace */
