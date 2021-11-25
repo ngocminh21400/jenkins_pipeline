@@ -8,7 +8,7 @@ from selenium.webdriver.common.keys import Keys
 options = Options()
 options.headless = True
 driver = webdriver.Firefox(executable_path='/usr/local/bin/geckodriver',options=options)
-driver.get('http://localhost:99')
+driver.get('https://www.google.com/')
 # driver.find_element(By.NAME, "q").send_keys("ming")
 # driver.find_element(By.NAME, "q").send_keys(Keys.ENTER)
 #driver.close()
