@@ -26,6 +26,7 @@ pipeline{
         stage('selenium test'){
             
             steps{
+                sh 'curl http://localhost:99'
                 sh 'python3 --version'
                 sh 'python3 test.py'
             }
